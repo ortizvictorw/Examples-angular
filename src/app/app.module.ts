@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { ConverterComponent } from './components/converter/converter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    TasksComponent
+    TasksComponent,
+    ConverterComponent
   ],
   imports: [
     FormsModule,
