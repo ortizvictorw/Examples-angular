@@ -1,0 +1,37 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <input
+        type="text"
+        [(ngModel)]="taskName"
+        (keyup.enter)="addTask()"
+        class="form-control form-control-lg"
+        placeholder="Entry task..."
+      />
+    </div>
+
+    <div class="col-lg-6 offset-lg-3 mt-3">
+      <div *ngIf="taskList.length === 0" class="card p-2">
+        <h6>Empty task</h6>
+      </div>
+      <ul class="list-group">
+        <li
+          *ngFor="let task of taskList; let i = index"
+          class="list-group-item mb-1 d-flex justify-content-between"
+        >
+          <span class="cursor" (click)="updateTask(task, i)">
+            <em
+              [class.text-success]="task.state"
+              [ngClass]="task.state ? 'fas fa-check-circle' : 'far fa-circle'"
+            >
+            </em>
+          </span>
+          {{ task.name }}
+          <span class="cursor text-danger" (click)="deleteTask(i)"
+            ><em class="fas fa-trash-alt"></em
+          ></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
